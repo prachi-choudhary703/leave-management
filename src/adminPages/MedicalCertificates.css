@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.medical-page {
+    padding: 18px;
+    background: #f8fafc;
+    min-height: calc(100vh - 75px);
+}
+
+/* header */
+
+.medical-header {
+    margin-bottom: 18px;
+}
+
+.medical-header h2 {
+    font-size: 28px;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.medical-header p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* search */
+
+.medical-top {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.medical-search {
+    flex: 1;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 0 15px;
+}
+
+.medical-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.medical-top select {
+    width: 220px;
+    height: 44px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 0 12px;
+    background: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.medical-search:focus-within,
+.medical-top select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .12);
+}
+
+/* table */
+
+.medical-table {
+    background: white;
+    border-radius: 14px;
+    overflow: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+}
+
+.medical-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.medical-table thead {
+    background: #2563eb;
+    color: white;
+}
+
+.medical-table th {
+    padding: 14px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.medical-table td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+}
+
+.medical-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.medical-table td[colspan] {
+    padding: 40px;
+    color: #6b7280;
+}
+
+/* status */
+
+.status {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pending {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.approved {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.rejected {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* actions */
+
+.medical-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.medical-actions button,
+.certificate-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.certificate-btn {
+    background: #ede9fe;
+    color: #7c3aed;
+}
+
+.certificate-btn:hover {
+    background: #7c3aed;
+    color: white;
+}
+
+.view-btn {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.view-btn:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.approve-btn {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.approve-btn:hover {
+    background: #15803d;
+    color: white;
+}
+
+.reject-btn {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.reject-btn:hover {
+    background: #dc2626;
+    color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+    .medical-page {
+        padding: 18px;
+    }
+
+    .medical-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .medical-table table {
+        min-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .medical-page {
+        padding: 16px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .medical-header {
+        margin-bottom: 16px;
+    }
+
+    .medical-header h2 {
+        font-size: 23px;
+        line-height: 1.3;
+    }
+
+    .medical-header p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .medical-top {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .medical-search {
+        width: 100%;
+        flex: none;
+        height: 44px;
+    }
+
+    .medical-search input {
+        font-size: 13px;
+    }
+
+    .medical-top select {
+        width: 100%;
+        height: 44px;
+    }
+
+    .medical-table {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 12px;
+    }
+
+    .medical-table table {
+        min-width: 800px;
+    }
+
+    .medical-table th,
+    .medical-table td {
+        padding: 12px 10px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .status {
+        padding: 5px 12px;
+        font-size: 11px;
+    }
+
+    .medical-actions {
+        gap: 6px;
+    }
+
+    .medical-actions button,
+    .certificate-btn {
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+    }
+
+    .medical-table td[colspan] {
+        padding: 35px 15px;
+    }
+}
+
+@media (max-width: 550px) {
+    .medical-page {
+        padding: 13px 11px 24px;
+    }
+
+    .medical-header h2 {
+        font-size: 21px;
+    }
+
+    .medical-header p {
+        font-size: 12px;
+    }
+
+    .medical-search {
+        height: 42px;
+        padding: 0 12px;
+    }
+
+    .medical-top select {
+        height: 42px;
+        font-size: 13px;
+    }
+
+    .medical-table {
+        border-radius: 10px;
+    }
+
+    .medical-table table {
+        min-width: 760px;
+    }
+
+    .medical-table th,
+    .medical-table td {
+        padding: 11px 9px;
+        font-size: 12px;
+    }
+
+    .medical-actions button,
+    .certificate-btn {
+        width: 33px;
+        height: 33px;
+    }
+
+    .status {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .medical-page {
+        padding: 11px 9px 20px;
+    }
+
+    .medical-header h2 {
+        font-size: 20px;
+    }
+
+    .medical-header p {
+        font-size: 11px;
+    }
+
+    .medical-table table {
+        min-width: 720px;
+    }
+
+    .medical-table th,
+    .medical-table td {
+        padding: 10px 8px;
+        font-size: 11px;
+    }
+
+    .medical-actions button,
+    .certificate-btn {
+        width: 32px;
+        height: 32px;
+    }
+}

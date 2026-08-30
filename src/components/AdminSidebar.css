@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.admin-sidebar {
+    width: 260px;
+    height: 100vh;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: .3s;
+    z-index: 1000;
+}
+
+.admin-sidebar.collapse {
+    width: 85px;
+}
+
+/* logo */
+
+.admin-logo {
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+
+.admin-logo h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* profile */
+
+.admin-profile {
+    padding: 28px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+
+.admin-profile svg {
+    margin-bottom: 10px;
+}
+
+.admin-profile h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.admin-profile span {
+    font-size: 13px;
+    opacity: .85;
+}
+
+/* menu */
+
+.admin-menu {
+    flex: 1;
+    padding: 18px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin-menu a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    transition: .3s;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.admin-menu a:hover {
+    background: rgba(255, 255, 255, .15);
+    transform: translateX(4px);
+}
+
+.admin-menu a.active {
+    background: white;
+    color: #2563eb;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+
+/* logout */
+
+.logout-btn {
+    margin: 15px;
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    background: #ef4444;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.logout-btn:hover {
+    background: #dc2626;
+}
+
+/* collapse */
+
+.admin-sidebar.collapse .admin-logo h2,
+.admin-sidebar.collapse .admin-profile h3,
+.admin-sidebar.collapse .admin-profile span,
+.admin-sidebar.collapse .admin-menu span,
+.admin-sidebar.collapse .logout-btn span {
+    display: none;
+}
+
+.admin-sidebar.collapse .admin-menu a {
+    justify-content: center;
+    padding: 14px;
+}
+
+.admin-sidebar.collapse .logout-btn {
+    justify-content: center;
+}
+
+/* scrollbar */
+
+.admin-menu::-webkit-scrollbar {
+    width: 4px;
+}
+
+.admin-menu::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .35);
+    border-radius: 20px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+    .admin-sidebar {
+        width: 250px;
+    }
+
+    .admin-sidebar.collapse {
+        width: 80px;
+    }
+
+    .admin-menu {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+
+/* ================= TABLET / MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .admin-sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 220px;
+        height: 100dvh;
+        transform: translateX(-100%);
+        z-index: 1000;
+        overflow: hidden;
+    }
+
+    /* Menu click ke baad sidebar open */
+    .admin-sidebar.collapse {
+        width: 220px;
+        transform: translateX(0);
+    }
+
+    .admin-logo {
+        height: 65px;
+        flex-shrink: 0;
+    }
+
+    .admin-logo h2 {
+        font-size: 19px;
+    }
+
+    .admin-profile {
+        padding: 16px 12px;
+        flex-shrink: 0;
+    }
+
+    .admin-profile h3 {
+        font-size: 15px;
+    }
+
+    .admin-profile span {
+        font-size: 11px;
+    }
+
+    .admin-menu {
+        flex: 1;
+        padding: 12px 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        min-height: 0;
+    }
+
+    .admin-menu a {
+        min-height: 43px;
+        padding: 11px 12px;
+        gap: 11px;
+        font-size: 13px;
+    }
+
+    .admin-menu a svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    .logout-btn {
+        margin: 9px 10px;
+        height: 42px;
+        min-height: 42px;
+        flex-shrink: 0;
+        font-size: 12px;
+    }
+
+    /* Mobile mein collapse = sidebar OPEN */
+    .admin-sidebar.collapse .admin-logo h2,
+    .admin-sidebar.collapse .admin-profile h3,
+    .admin-sidebar.collapse .admin-profile span,
+    .admin-sidebar.collapse .admin-menu span,
+    .admin-sidebar.collapse .logout-btn span {
+        display: inline;
+    }
+
+    .admin-sidebar.collapse .admin-logo {
+        justify-content: center;
+    }
+
+    .admin-sidebar.collapse .admin-profile {
+        align-items: center;
+    }
+
+    .admin-sidebar.collapse .admin-menu a {
+        justify-content: flex-start;
+        padding: 11px 12px;
+    }
+
+    .admin-sidebar.collapse .logout-btn {
+        justify-content: center;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .admin-sidebar,
+    .admin-sidebar.collapse {
+        width: 210px;
+    }
+
+    .admin-logo {
+        height: 62px;
+    }
+
+    .admin-logo h2 {
+        font-size: 18px;
+    }
+
+    .admin-profile {
+        padding: 14px 10px;
+    }
+
+    .admin-profile h3 {
+        font-size: 14px;
+    }
+
+    .admin-profile span {
+        font-size: 10px;
+    }
+
+    .admin-menu {
+        padding: 10px 8px;
+    }
+
+    .admin-menu a {
+        min-height: 41px;
+        padding: 10px 11px;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .admin-menu a svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .logout-btn {
+        margin: 8px;
+        height: 40px;
+        min-height: 40px;
+        font-size: 11px;
+    }
+}
+
+
+/* ================= VERY SMALL MOBILE ================= */
+
+@media (max-width: 450px) {
+
+    .admin-sidebar,
+    .admin-sidebar.collapse {
+        width: 100px;
+    }
+
+    .admin-logo {
+        height: 60px;
+    }
+
+    .admin-logo h2 {
+        font-size: 17px;
+    }
+
+    .admin-profile {
+        padding: 13px 9px;
+    }
+
+    .admin-menu {
+        padding: 9px 7px;
+    }
+
+    .admin-menu a {
+        min-height: 39px;
+        padding: 9px 10px;
+        gap: 9px;
+        font-size: 11px;
+    }
+
+    .admin-menu a svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .logout-btn {
+        margin: 7px;
+        height: 39px;
+        min-height: 39px;
+        font-size: 10px;
+    }
+}
