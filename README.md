@@ -1,16 +1,63 @@
-# React + Vite
+# Leave Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A web-based Leave Management System built with React to help users manage and track their leave requests in an organized way.
 
-Currently, two official plugins are available:
+## About the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Leave Management System is a frontend web application designed to simplify the process of managing employee leaves.
 
-## React Compiler
+The application provides a clean and responsive interface for applying for leaves, viewing leave information and navigating between different sections.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies Used
 
-## Expanding the Oxlint configuration
+- React.js
+- JavaScript
+- HTML
+- CSS
+- React Router
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Features
+
+- User login and signup interface
+- Leave management dashboard
+- Apply for leave
+- View leave information
+- Calendar-based leave tracking
+- Responsive user interface
+- Navigation between application sections
+
+## Project Structure
+
+The application is organized using reusable React components, layouts and pages to keep the project structured and maintainable.
+
+## Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/prachi-choudhary703/leave-management.git
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run the project
+
+```bash
+npm run dev
+```
+
+The application will start on the local development server provided by Vite.
+
+## Live Demo
+
+The project is deployed on Netlify.
+
+[View Live Project](https://leave-management-24.netlify.app)
+
+## Author
+
+Prachi Choudhary
